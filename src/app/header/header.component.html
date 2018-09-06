@@ -1,0 +1,139 @@
+ <!-- preloader -->
+ <div class="preloader">
+  <div class="spinner"></div>
+</div>
+<!-- end preloader -->
+
+<!-- navbar -->
+<div class="navbar">
+  <div class="container">
+      <div class="row">
+          <div class="col s6">
+              <div class="content-left">
+                  <a href="#slide-out" data-activates="slide-out" class="sidebar"><i class="fa fa-bars"></i></a>
+                  <a routerLink=""><h1>JAZY</h1></a>
+              </div>
+          </div>
+          <div class="col s6">
+              <div class="content-right">
+                  <a href="#slide-out-right" data-activates="slide-out-right" class="sidebar-search"><i class="fa fa-search"></i></a>
+                  <!-- <a href="#slide-out-cart" data-activates="slide-out-cart" class="sidebar-cart">
+                      <i class="fa fa-shopping-cart"></i>
+                      <sup>3</sup>
+                  </a> -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end navbar -->
+
+<!-- sidebar -->
+<div class="sidebar-panel">
+  <ul id="slide-out" class="collapsible side-nav">
+      <li>
+          <div class="user-view">
+              <div class="background">
+                  <img src="../../assets/images/blog3.jpg" alt="">
+              </div>
+              <!-- <img class="circle responsive-img" src="../../assets/images/profile.png" alt=""> -->
+              <span class="white-text name">JAZY</span>
+          </div>
+      </li>
+      <li><a routerLink=""><i class="fa fa-home"></i>Home</a></li>
+      <li>
+          <div class="collapsible-header">
+              <i class="fa fa-rss"></i>Blog<span><i class="fa fa-angle-right right"></i></span>
+          </div>
+          <div class="collapsible-body">
+              <ul>
+                  <li><a routerLink="" routerLinkActive="active">Blog</a></li>
+                  <li><a routerLink="/blog-detail" routerLinkActive="active">Blog Single</a></li>
+              </ul>
+          </div>
+      </li>
+      <li><a routerLink="/about"><i class="fa fa-user"></i>About Us</a></li>
+      <li><a routerLink="/contact"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
+      <li><a routerLink="/sign-in"><i class="fa fa-sign-in"></i>Sign In</a></li>
+      <li><a routerLink="/sign-up"><i class="fa fa-user-plus"></i>Sign Up</a></li>
+  </ul>
+</div>
+<!-- end sidebar -->
+
+<!-- sidebar -->
+<div class="sidebar-panel sidebar-search">
+  <ul id="slide-out-right" class="collapsible side-nav">
+      <li>
+          <div class="form">
+              <input type="search">
+              <button class="button"><i class="fa fa-search"></i></button>
+          </div>
+          <div class="clear"></div>
+      </li>
+      <li>
+          <h5>Popular Search</h5></li>
+      <li><a href="#">Football</a></li>
+      <li><a href="#">Lemon</a></li>
+      <li><a href="#">Canon</a></li>
+      <li><a href="#">Laptop</a></li>
+      <li><a href="#">Pizza</a></li>
+      <li><a href="#">Sport</a></li>
+  </ul>
+</div>
+<!-- end sidebar -->
+
+<!-- sidebar cart -->
+<div class="sidebar-panel sidebar-cart">
+  <div id="slide-out-cart" class="collapsible side-nav">
+      <div class="content">
+          <div class="cart-img">
+              <img src="../../assets/images/product1.jpg" alt="">
+          </div>
+          <div class="cart-title">
+              <a href="#">Casual Clothes in a Modern Style</a>
+              <h5>$28</h5>
+          </div>
+          <div class="cart-remove">
+              <a href="#"><i class="fa fa-remove"></i></a>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div class="content">
+          <div class="cart-img">
+              <img src="../../assets/images/product2.jpg" alt="">
+          </div>
+          <div class="cart-title">
+              <a href="#">Trendy Headband Style in 2018</a>
+              <h5>$11</h5>
+          </div>
+          <div class="cart-remove">
+              <a href="#"><i class="fa fa-remove"></i></a>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div class="content">
+          <div class="cart-img">
+              <img src="../../assets/images/product3.jpg" alt="">
+          </div>
+          <div class="cart-title">
+              <a href="#">Shoes that Light up When Dark</a>
+              <h5>$32</h5>
+          </div>
+          <div class="cart-remove">
+              <a href="#"><i class="fa fa-remove"></i></a>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div class="cart-button">
+          <ul>
+              <li>
+                  <button class="button"><i class="fa fa-shopping-cart"></i>View Cart</button>
+              </li>
+              <li>
+                  <button class="button"><i class="fa fa-send"></i>Checkout</button>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- end sidebar cart -->
