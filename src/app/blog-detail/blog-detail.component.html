@@ -1,13 +1,12 @@
 <!-- blog single -->
 <div class="blog-single segments-page">
   <div class="container">
-    <div class="contents">
-      <img src="../../assets/images/blog-single.jpg" alt="">
+    <div class="contents" *ngFor="let data of blog">
+      <img src="{{data.image}}" alt="">
       <div class="text">
-        <h4>{{blog[0]}}</h4>
+        <h4>{{data.title}}</h4>
         <p class="date"><i class="fa fa-calendar"></i>January 01 2018</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit quaerat distinctio perspiciatis dignissimos assumenda. Ab cum, vero voluptas quos! Dignissimos sequi explicabo nulla in quas nihil, quos sapiente tenetur.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate temporibus at laborum tempora repellat magnam eligendi corporis cumque quasi cum, accusantium et! Expedita at, recusandae porro. A ratione, iste accusamus.</p>
+        <p>{{data.body}}</p>       
       </div>
     </div>
     <div class="share-button">

@@ -10,20 +10,14 @@ import { BlogService } from '../blog.service';
 })
 export class BlogDetailComponent implements OnInit {
   blogId;
-  blog=[];
+  blog;
   constructor(private route: ActivatedRoute, private _blogService: BlogService) { }
 
   ngOnInit() {
     let Id = parseInt(this.route.snapshot.paramMap.get("id"));
     this.blogId = Id;
     this._blogService.getBlog()
-       .subscribe(function(data){
-           for(let i =0; data.length > i; i++){
-              if(data[i].id == Id){
-                this.blog = data[i];
-              }   
-            }
-       });
+       .subscribe(data => this.blog = data.filter(x => x.id === Id)); 
   }
 
 }
