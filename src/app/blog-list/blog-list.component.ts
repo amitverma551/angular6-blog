@@ -9,7 +9,7 @@ import { BlogService } from '../blog.service';
 export class BlogListComponent implements OnInit {
   public blogs =[];
   showBlog= 2;
-  prevsVal= 4;
+  prevsVal;
   throttle = 20;
   scrollDistance = 1;
   finished = true;
