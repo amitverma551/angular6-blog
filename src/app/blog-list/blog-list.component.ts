@@ -9,9 +9,10 @@ import { BlogService } from '../blog.service';
 export class BlogListComponent implements OnInit {
   public blogs =[];
   showBlog= 2;
+  prevsVal= 4;
   throttle = 20;
   scrollDistance = 1;
-  finished = false;
+  finished = true;
 
 
 
@@ -24,10 +25,11 @@ export class BlogListComponent implements OnInit {
 
   onScrollDown () {
     console.log('scrolled down!!');
-    this.finished = true;
+    this.prevsVal = this.showBlog;
     this.showBlog += 2 ;
+    this.finished = false;
     this._blogService.getBlog()
-      .subscribe(data => this.blogs = data.slice(0, this.showBlog)
+      .subscribe(data => {data.slice(this.prevsVal, this.showBlog).filter(x=> this.blogs.push(x)); this.finished = true;}
     );
   }
   }
