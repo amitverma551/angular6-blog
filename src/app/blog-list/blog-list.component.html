@@ -1,15 +1,27 @@
 <!-- blog -->
 <div class="blog segments-page">
   <div class="container">
-    <div class="contents" *ngFor="let blog of blogs">
-      <img src="{{blog.image}}" alt="">
-      <div class="text">
-        <a routerLink="/blog-detail/{{blog.id}}"><h4>{{blog.title}}</h4></a>
-        <p class="date"><i class="fa fa-calendar"></i>January 01 2018</p>
-        <p>{{blog.body}}</p>
+    <div class="search-results"
+      infinite-scroll
+      [infiniteScrollDistance]="scrollDistance"
+      [infiniteScrollThrottle]="throttle"
+      (scrolled)="onScrollDown()">
+      <div class="contents" *ngFor="let blog of blogs">
+        <img src="{{blog.image}}" alt="">
+        <div class="text">
+          <a routerLink="/blog-detail/{{blog.id}}"><h4>{{blog.title}}</h4></a>
+          <p class="date"><i class="fa fa-calendar"></i>January 01 2018</p>
+          <p>{{blog.body}}</p>
+        </div>
       </div>
     </div>
-    <div class="pagination">
+    <div *ngIf="!finished" class="loading-spinner"><img src="../../assets/images/giphy.gif"></div>
+    <div *ngIf="finished">
+      End of database... That's all folks!
+    </div>
+
+
+    <!-- <div class="pagination">
       <ul>
         <li class="disabled"><a class="z-depth-1" href="#">1</a></li>
         <li><a href="#">2</a></li>
@@ -17,7 +29,7 @@
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </div>
 <!-- end blog -->

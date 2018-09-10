@@ -8,10 +8,26 @@ import { BlogService } from '../blog.service';
 })
 export class BlogListComponent implements OnInit {
   public blogs =[];
+  showBlog= 2;
+  throttle = 20;
+  scrollDistance = 1;
+  finished = false;
+
+
+
   constructor(private _blogService: BlogService) { }
 
   ngOnInit() {
     this._blogService.getBlog()
-      .subscribe(data => this.blogs = data);
+      .subscribe(data => this.blogs = data.slice(0, this.showBlog));
+  }
+
+  onScrollDown () {
+    console.log('scrolled down!!');
+    this.finished = true;
+    this.showBlog += 2 ;
+    this._blogService.getBlog()
+      .subscribe(data => this.blogs = data.slice(0, this.showBlog)
+    );
   }
   }
