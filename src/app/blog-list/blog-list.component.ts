@@ -12,9 +12,7 @@ export class BlogListComponent implements OnInit {
   prevsVal;
   throttle = 20;
   scrollDistance = 1;
-  finished = true;
-
-
+  finished:boolean = true;
 
   constructor(private _blogService: BlogService) { }
 
@@ -29,7 +27,9 @@ export class BlogListComponent implements OnInit {
     this.showBlog += 2 ;
     this.finished = false;
     this._blogService.getBlog()
-      .subscribe(data => {data.slice(this.prevsVal, this.showBlog).filter(x=> this.blogs.push(x)); this.finished = true;}
+      .subscribe(data => {data.slice(this.prevsVal, this.showBlog).filter(x=> this.blogs.push(x))},
+      (err)=> console.log(err),
+      () => this.finished = true
     );
   }
   }

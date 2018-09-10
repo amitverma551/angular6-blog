@@ -14,3 +14,7 @@
     width: 35px;
     height: auto;
 }
+.ph-item{
+    border: none;
+    padding:0px;
+}
